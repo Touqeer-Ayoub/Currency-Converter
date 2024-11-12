@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <fieldset>
+        <h1>Currency Converter</h1><br><br>
+        <table>
+            <tr>
+                <td>Enter Amount</td>
+            </tr>
+            <td> <input type="number" placeholder="Enter Your Amount" id="rs"></td>
+        </table>
+        <div class="parent1">
+            <p>To</p>
+            <select name="" id="currency">
+                <option value="3.32">INDIA</option>
+                <option value="278.29">US DOLLAR</option>
+                <option value="74.28">SAUDI RIYAL</option>
+                <option value="301.07">EURO</option>
+                <option value="4.32">BANGLADESH</option>
+                <option value="5.32">AFGHANISTAN</option>
+                <option value="342.85">POUND STERLING</option>
+            </select>
+        </div>
+        <div class="parent2">
+            <p>From</p>
+            <select name="">
+                <option value="">PAKISTAN</option>
+            </select>
+            <i class="fa fa-long-arrow-left" aria-hidden="true" style="margin-left: 9px;"></i>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+        <div class="parent3">
+            <p>Rs</p>
+           <input type="number" id="display" placeholder="Rupees" readonly>
+            <button onclick="currencyconveryter()">Get Exchange Rate</button>
+        </div>
+    </fieldset>
+    <script>
+        function currencyconveryter() {
+            var dropdown = document.getElementById('currency');
+            var dropdowntxt = dropdown.options[dropdown.selectedindex].text;
+            var dropdownvalue = dropdown.options[dropdown.selectedindex].value;
+            var pkr = document.getElementById('rs').value;
+            var displayvalue = document.getElementById('display');
+            var result = pkr/displayvalue;
+
+            if (dropdowntxt == 'INDIA') {
+                displayvalue.value = 'INDIA' + result.toFixed(2);
+            }
+            else if (dropdowntxt == 'US DOLLAR') {
+                displayvalue.value = 'USD' + result.toFixed(2);
+            }
+            else if (dropdowntxt == 'SAUDI RIYAL') {
+                displayvalue.value = 'SAUDI RIYAL' + result.toFixed(2);
+            }
+            else if (dropdowntxt == 'EURO') {
+                displayvalue.value= 'EURO' + result.toFixed(2);
+            }
+            else if (dropdowntxt == 'BANGLADESH') {
+                displayvalue.value = 'BANGLADESH' + result.toFixed(2);
+            }
+            else if (dropdowntxt == 'AFGHANISTAN') {
+                displayvalue.value = 'AFGHANISTAN' + result.toFixed(2);
+            }
+            else if (dropdowntxt == 'POUND STERLING') {
+                displayvalue.value = 'POUND STERLING' + result.toFixed(2);
+            }
+       
+        }
+    </script>
+</body>
+
+</html>
